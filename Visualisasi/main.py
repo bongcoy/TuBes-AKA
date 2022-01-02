@@ -1,4 +1,3 @@
-#---start import section-------------------
 import time
 import math
 import random
@@ -6,10 +5,8 @@ import random
 from tkinter import Canvas, Frame, StringVar, Tk, Label, Button, Scale, HORIZONTAL
 from tkinter import ttk
 
-from mergeSort import mergeSort
 from bubbleSort import bubbleSort
-
-#---end import section---------------------
+from mergeSort import mergeSort
 
 
 root = Tk()
@@ -20,7 +17,7 @@ root.maxsize(root_width,root_height)   #(width,height)
 root.config(bg='black')
 
 #----GLOBAL VARIABLES---------
-allAlgos = ('Merge Sort', 'Bubble Sort')
+allAlgos = ('Bubble Sort', 'Merge Sort')
 selectedAlgo = StringVar()
 pauseBool = False
 arr = []
@@ -72,8 +69,8 @@ def displayArray(arr,arrayColor,opCount):
 
 # Map from string to sorting function
 lookup = {
-    'Merge Sort': mergeSort,
     'Bubble Sort': bubbleSort,
+    'Merge Sort': mergeSort,
 }
 
 
