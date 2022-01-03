@@ -9,21 +9,23 @@ def mergeSort(arr, displayArray, speedInput, pauseBool):
     swapCount = 0
     start, end = 0, len(arr) - 1
     _merge_sort(arr, displayArray, speedInput, pauseBool, start, end)
+    print("Merge Sorted arr : ", arr)
 
 
 # divides the array recursively into two parts then sorts
 def _merge_sort(arr, displayArray, speedInput, pauseBool, start, end):
     if start < end:
-        mid = (start + end) // 2
+        mid = (start + end - 1) // 2
         _merge_sort(arr, displayArray, speedInput, pauseBool, start, mid)
         _merge_sort(arr, displayArray, speedInput, pauseBool, mid + 1, end)
-        _merge(arr, displayArray, speedInput, pauseBool, start, mid, end)
 
+        _merge(arr, displayArray, speedInput, pauseBool, start, mid, end)
 
 def _merge(arr, displayArray, speedInput, pauseBool, start, mid, end):
     global swapCount
 
     N = len(arr)
+
     #--highlight the left and the right parts of the array
     colorArray = ['red'] * N
     colorCoords = ((start, mid + 1, '#ffff00'), (mid + 1, end + 1, '#5200cc'))
@@ -32,6 +34,7 @@ def _merge(arr, displayArray, speedInput, pauseBool, start, mid, end):
 
     displayArray(arr, colorArray, swapCount)
     time.sleep(max_time - (speedInput() * max_time / 100))
+    #---end graphics---
 
     arrL = arr[start:mid+1]
     arrR = arr[mid + 1:end + 1]
@@ -72,4 +75,4 @@ def _merge(arr, displayArray, speedInput, pauseBool, start, mid, end):
         displayArray(arr, colorArray, swapCount)
         time.sleep(max_time - (speedInput() * max_time / 100))
 
-    print("Sorted arr : ", arr)
+    print("Sorting arr : ", arr)

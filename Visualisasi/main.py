@@ -26,8 +26,14 @@ arr = []
 def generateRandomArray():
     #random array of non-repeating n elements
     global arr
+    if len(arr) != 0:
+        arr = []
+        del arr[:]
+    
     n = int(dataSize.get())
-    arr = list(range(1, n + 1))
+    for i in range(n):
+        bilangan = random.randint(1,50)
+        arr.append(bilangan)
     random.shuffle(arr)
 
     arrayColor = ['red']  * n
@@ -78,7 +84,8 @@ def startSort():
     global arr
     fn = lookup[algoCombo.get()]
     fn(arr, displayArray, sortSpeed.get, pauseBool)
-
+    arr = []
+    del arr[:]
 
 #----User Interface Section---------------------------------------------------------------------------------------------
 inputFrame = Frame(root,height = 200,width = 950,bg = 'black')
