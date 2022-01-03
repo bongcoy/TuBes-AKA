@@ -37,7 +37,3 @@ def bubbleSort(arr, displayArray, speedInput, pauseBool):
     colorArray = ['green'] * N
     displayArray(arr, colorArray, swapCount)
     print("Bubble Sorted arr : ",arr)
-
-
-# arr = [2, 10,11,25,13,78,1,7,80]
-# print(bubbleSort(arr))
